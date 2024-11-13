@@ -17,6 +17,7 @@ dp = Dispatcher()
 db = Postgres()
 
 
+# Обработка команды получение рейтинга треков артиста
 @dp.message(aiogram.filters.Command("get_chart_by_artist"))
 async def get_chart_by_artist(message: types.Message, state: FSMContext):
     await message.answer("Отправьте мне имя исполнителя или название группы.")
@@ -34,7 +35,7 @@ async def process_artist_name(message: types.Message, state: FSMContext):
     await state.clear()
 
 
-
+# Обработка команды установки любимого артиста
 @dp.message(aiogram.filters.Command("set_favorite_artist"))
 async def set_favorite_artist(message: types.Message, state: FSMContext):
     await message.answer("Отправьте мне имя любимого исполнителя.")
@@ -49,6 +50,7 @@ async def process_favorite_artist(message: types.Message, state: FSMContext):
     await state.clear()
 
 
+# Обработка команды получения рандомной песни любимого артиста
 @dp.message(aiogram.filters.Command("get_random_song"))
 async def get_random_song(message: types.Message):
     val = await db.get_favorite_artist_by_user(message.from_user.username)
@@ -64,6 +66,7 @@ async def get_random_song(message: types.Message):
 Чтобы сделать это, воспользуйтесь командой /set_favorite_artist''')
 
 
+# Обработка команды начала работы с ботом
 @dp.message(aiogram.filters.Command("start"))
 async def start_func(message: types.Message):
     await message.answer(f'''Привет, {message.from_user.username}!
@@ -77,11 +80,13 @@ async def start_func(message: types.Message):
 /get_random_song - получить случайную песню по любимому исполнителю''')
 
 
+# Обработка команды получения рейтинга песен
 @dp.message(aiogram.filters.Command("get_chart"))
 async def get_chart(message: types.Message):
     await message.answer(await ym_client.get_chart())
 
 
+# Обработка получения неизвестной команды
 @dp.message()
 async def unknown_command(message: types.Message):
     await message.answer("Гав-гав...")
@@ -89,7 +94,7 @@ async def unknown_command(message: types.Message):
 
 async def main():
     await db.connect()
-    bot = Bot(my_token)
+    bot = Bot(my_token) # создание бота
     await dp.start_polling(bot)
 
 

@@ -4,14 +4,16 @@ import asyncpg
 
 load_dotenv()
 
-
+# Класс для работы с базой данных
 class Postgres:
     def __init__(self):
         self.__connection = None
 
+    # Подключение к локальной бд
     async def connect(self):
         self.__connection = await asyncpg.connect(os.getenv("DB_ADDRESS"))
 
+    # Заполнение бд
     async def insert(self, username: str, artist_name: str):
         done = False
         try:

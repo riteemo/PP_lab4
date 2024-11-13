@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6f238f8-2892-447c-bded-a3b23c9275bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Postgres.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Postgres.py" beforeDir="false" afterPath="$PROJECT_DIR$/Postgres.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/States.py" beforeDir="false" afterPath="$PROJECT_DIR$/States.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YandexMusicAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/YandexMusicAPI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
